@@ -1,0 +1,375 @@
+object Form1: TForm1
+  Left = 47
+  Height = 579
+  Top = 239
+  Width = 914
+  Anchors = []
+  BorderStyle = bsToolWindow
+  Caption = 'T+A DAC8DSD Service Tool'
+  ClientHeight = 579
+  ClientWidth = 914
+  Constraints.MaxHeight = 1200
+  Constraints.MaxWidth = 1200
+  Constraints.MinHeight = 500
+  Constraints.MinWidth = 800
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  LCLVersion = '1.6.0.4'
+  object Panel1: TPanel
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = Owner
+    AnchorSideRight.Control = Owner
+    AnchorSideBottom.Control = Owner
+    Left = 0
+    Height = 579
+    Top = 0
+    Width = 914
+    Align = alClient
+    Caption = 'Panel1'
+    ClientHeight = 579
+    ClientWidth = 914
+    TabOrder = 0
+    object Header: TLabel
+      AnchorSideLeft.Control = Panel1
+      AnchorSideTop.Control = Panel1
+      AnchorSideRight.Control = Panel1
+      Left = 1
+      Height = 39
+      Top = 1
+      Width = 912
+      Align = alTop
+      Alignment = taCenter
+      Anchors = [akTop, akRight]
+      AutoSize = False
+      Caption = 'DAC 8 / DAC 8 DSD Service Tool'
+      Color = clScrollBar
+      Font.CharSet = ANSI_CHARSET
+      Font.Height = -21
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      Layout = tlCenter
+      ParentColor = False
+      ParentFont = False
+      Transparent = False
+    end
+    object CtrlPanel: TPanel
+      AnchorSideLeft.Control = Panel1
+      AnchorSideTop.Control = Header
+      AnchorSideBottom.Control = Panel1
+      Left = 1
+      Height = 538
+      Top = 40
+      Width = 199
+      Align = alLeft
+      ClientHeight = 538
+      ClientWidth = 199
+      ParentColor = False
+      TabOrder = 0
+      object ComPortButton: TButton
+        AnchorSideLeft.Control = CtrlPanel
+        AnchorSideTop.Control = StatusLabel
+        AnchorSideTop.Side = asrBottom
+        AnchorSideRight.Control = CtrlPanel
+        AnchorSideRight.Side = asrBottom
+        Left = 11
+        Height = 55
+        Top = 88
+        Width = 177
+        Anchors = [akTop, akLeft, akRight]
+        BorderSpacing.Left = 10
+        BorderSpacing.Right = 10
+        Caption = 'ComPortButton'
+        OnClick = ComPortButtonClick
+        TabOrder = 0
+      end
+      object ComSelectBox: TComboBox
+        AnchorSideLeft.Control = CtrlPanel
+        AnchorSideTop.Control = ComPortButton
+        AnchorSideTop.Side = asrBottom
+        AnchorSideRight.Control = CtrlPanel
+        AnchorSideRight.Side = asrBottom
+        Left = 11
+        Height = 23
+        Top = 144
+        Width = 177
+        Anchors = [akTop, akLeft, akRight]
+        AutoDropDown = True
+        AutoSize = False
+        BorderSpacing.Left = 10
+        BorderSpacing.Top = 1
+        BorderSpacing.Right = 10
+        ItemHeight = 15
+        OnChange = ComSelectBoxChange
+        ParentColor = True
+        Style = csDropDownList
+        TabOrder = 1
+        Visible = False
+      end
+      object StatusHeader: TLabel
+        AnchorSideLeft.Control = CtrlPanel
+        AnchorSideRight.Control = CtrlPanel
+        AnchorSideRight.Side = asrBottom
+        Left = 11
+        Height = 21
+        Top = 21
+        Width = 177
+        Anchors = [akLeft, akRight]
+        AutoSize = False
+        BorderSpacing.Left = 10
+        BorderSpacing.Right = 10
+        Caption = 'DAC  Status :'
+        Color = clScrollBar
+        Layout = tlCenter
+        ParentColor = False
+        Transparent = False
+      end
+      object StatusLabel: TLabel
+        AnchorSideLeft.Control = CtrlPanel
+        AnchorSideTop.Control = StatusHeader
+        AnchorSideTop.Side = asrBottom
+        AnchorSideRight.Control = CtrlPanel
+        AnchorSideRight.Side = asrBottom
+        Left = 11
+        Height = 46
+        Top = 42
+        Width = 177
+        Alignment = taCenter
+        Anchors = [akTop, akLeft, akRight]
+        AutoSize = False
+        BorderSpacing.Left = 10
+        BorderSpacing.Right = 10
+        Caption = 'Not Connected'
+        Color = clYellow
+        Layout = tlCenter
+        ParentColor = False
+        Transparent = False
+        WordWrap = True
+      end
+      object ComTestButton: TButton
+        AnchorSideLeft.Control = CtrlPanel
+        AnchorSideTop.Control = ConnectButton
+        AnchorSideTop.Side = asrBottom
+        AnchorSideRight.Control = CtrlPanel
+        AnchorSideRight.Side = asrBottom
+        Left = 11
+        Height = 50
+        Top = 228
+        Width = 177
+        Anchors = [akTop, akLeft, akRight]
+        BorderSpacing.Left = 10
+        BorderSpacing.Top = 10
+        BorderSpacing.Right = 10
+        Caption = 'Test Connection'
+        OnClick = ComTestButtonClick
+        TabOrder = 2
+        Visible = False
+      end
+      object ProgressBar1: TProgressBar
+        AnchorSideLeft.Control = CtrlPanel
+        AnchorSideRight.Control = CtrlPanel
+        AnchorSideRight.Side = asrBottom
+        AnchorSideBottom.Control = CtrlPanel
+        AnchorSideBottom.Side = asrBottom
+        Left = 11
+        Height = 16
+        Top = 511
+        Width = 177
+        Anchors = [akLeft, akRight, akBottom]
+        BorderSpacing.Left = 10
+        BorderSpacing.Right = 10
+        BorderSpacing.Bottom = 10
+        TabOrder = 3
+        Visible = False
+      end
+      object FWButton: TButton
+        AnchorSideLeft.Control = CtrlPanel
+        AnchorSideTop.Control = ComTestButton
+        AnchorSideTop.Side = asrBottom
+        AnchorSideRight.Control = CtrlPanel
+        AnchorSideRight.Side = asrBottom
+        Left = 11
+        Height = 50
+        Top = 288
+        Width = 177
+        Anchors = [akTop, akLeft, akRight]
+        BorderSpacing.Left = 10
+        BorderSpacing.Top = 10
+        BorderSpacing.Right = 10
+        Caption = 'Flash Firmware'
+        OnClick = FWButtonClick
+        TabOrder = 4
+        Visible = False
+      end
+      object CtrlButton: TButton
+        AnchorSideLeft.Control = CtrlPanel
+        AnchorSideTop.Control = FWButton
+        AnchorSideTop.Side = asrBottom
+        AnchorSideRight.Control = CtrlPanel
+        AnchorSideRight.Side = asrBottom
+        Left = 11
+        Height = 50
+        Top = 348
+        Width = 177
+        Anchors = [akTop, akLeft, akRight]
+        BorderSpacing.Left = 10
+        BorderSpacing.Top = 10
+        BorderSpacing.Right = 10
+        Caption = 'Control'
+        OnClick = CtrlButtonClick
+        TabOrder = 5
+        Visible = False
+      end
+      object ConnectButton: TButton
+        AnchorSideLeft.Control = CtrlPanel
+        AnchorSideTop.Control = ComPortButton
+        AnchorSideTop.Side = asrBottom
+        AnchorSideRight.Control = CtrlPanel
+        AnchorSideRight.Side = asrBottom
+        Left = 11
+        Height = 50
+        Top = 168
+        Width = 177
+        Anchors = [akTop, akLeft, akRight]
+        BorderSpacing.Left = 10
+        BorderSpacing.Top = 25
+        BorderSpacing.Right = 10
+        Caption = 'Connect'
+        OnClick = ConnectButtonClick
+        TabOrder = 6
+        Visible = False
+      end
+      object TestButton: TButton
+        AnchorSideTop.Side = asrBottom
+        Left = 32
+        Height = 50
+        Top = 456
+        Width = 136
+        Anchors = []
+        BorderSpacing.Bottom = 10
+        Caption = 'TEST'
+        OnClick = TestButtonClick
+        TabOrder = 7
+        Visible = False
+      end
+      object HintLabel: TLabel
+        AnchorSideLeft.Control = CtrlPanel
+        AnchorSideTop.Control = CtrlButton
+        AnchorSideTop.Side = asrBottom
+        AnchorSideRight.Control = CtrlPanel
+        AnchorSideRight.Side = asrBottom
+        Left = 11
+        Height = 47
+        Top = 408
+        Width = 177
+        Anchors = [akTop, akLeft, akRight]
+        AutoSize = False
+        BorderSpacing.Left = 10
+        BorderSpacing.Top = 10
+        BorderSpacing.Right = 10
+        Color = clYellow
+        ParentColor = False
+        Transparent = False
+        Visible = False
+        WordWrap = True
+      end
+    end
+    object CmdWindow: TMemo
+      AnchorSideLeft.Control = CtrlPanel
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Side = asrBottom
+      AnchorSideRight.Control = Panel1
+      AnchorSideRight.Side = asrBottom
+      AnchorSideBottom.Control = Panel1
+      AnchorSideBottom.Side = asrBottom
+      Left = 200
+      Height = 150
+      Top = 428
+      Width = 713
+      Anchors = [akLeft, akRight, akBottom]
+      Constraints.MinHeight = 150
+      Lines.Strings = (
+        'CmdWindow'
+      )
+      OnKeyPress = CmdWindowKeyPress
+      TabOrder = 1
+      Visible = False
+    end
+    object CmdLabel: TLabel
+      AnchorSideLeft.Control = CtrlPanel
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Side = asrBottom
+      AnchorSideRight.Control = Panel1
+      AnchorSideRight.Side = asrBottom
+      AnchorSideBottom.Control = CmdWindow
+      Left = 200
+      Height = 23
+      Top = 405
+      Width = 713
+      Anchors = [akLeft, akRight, akBottom]
+      AutoSize = False
+      BorderSpacing.Top = 10
+      Caption = 'Command'
+      Color = clActiveCaption
+      Font.Style = [fsBold]
+      Layout = tlCenter
+      ParentColor = False
+      ParentFont = False
+      Transparent = False
+      Visible = False
+    end
+    object MsgLabel: TLabel
+      AnchorSideLeft.Control = CtrlPanel
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = Header
+      AnchorSideTop.Side = asrBottom
+      AnchorSideRight.Control = Panel1
+      AnchorSideRight.Side = asrBottom
+      Left = 200
+      Height = 22
+      Top = 40
+      Width = 713
+      Anchors = [akTop, akLeft, akRight]
+      AutoSize = False
+      Caption = 'DAC 8 DSD Messages'
+      Color = clActiveCaption
+      Font.Style = [fsBold]
+      Layout = tlCenter
+      ParentColor = False
+      ParentFont = False
+      Transparent = False
+    end
+    object MsgWindow: TMemo
+      AnchorSideLeft.Control = CtrlPanel
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = MsgLabel
+      AnchorSideTop.Side = asrBottom
+      AnchorSideRight.Control = Panel1
+      AnchorSideRight.Side = asrBottom
+      AnchorSideBottom.Control = CmdLabel
+      Left = 200
+      Height = 333
+      Top = 62
+      Width = 713
+      Anchors = [akTop, akLeft, akRight, akBottom]
+      Lines.Strings = (
+        'MsgWindow'
+      )
+      ReadOnly = True
+      TabOrder = 2
+    end
+  end
+  object Timer1: TTimer
+    Enabled = False
+    OnTimer = Timer1Timer
+    left = 40
+    top = 8
+  end
+  object OpenDialog1: TOpenDialog
+    Height = 50
+    DefaultExt = '.txt'
+    left = 8
+    top = 8
+  end
+end
