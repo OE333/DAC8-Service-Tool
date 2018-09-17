@@ -5,8 +5,10 @@ The tool is written in Pascal, using Lazarus IDE v 1.6 and is intended for use o
 
 For those only interested in upgrading the firmware of DAC8DSD:
 a compiled version of this program can be found in the subfolder /executable.
+
 To run this program a Windows PC with serial RS232 interface (COM poert) is needed.
 A USB/RS232 converetr can be used in cases where there is no COM port available on the PC.
+
 To connect the PC to the RS232 port of the PC a Sub-D9 -> T+A CTRL adapter is required.
 Such an adapter is described in the DAC8DSD_RS232.pdf document contained in subfolder /related documents.
 
