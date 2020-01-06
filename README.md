@@ -22,7 +22,6 @@ I believe that this program is sufficiently safe but I take no responsibility fo
 risks resulting from using this software.
 
 
-
+.
 History
-
 2020/01/06: Changed start position of ServiveTool main window to better fit screens with low resolution (new executable)
