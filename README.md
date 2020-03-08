@@ -25,4 +25,4 @@ risks resulting from using this software.
 
 History
 
-2020/01/06: Changed start position of ServiveTool main window to better fit screens with low resolution (new executable)
+2020/01/06: Changed start position of ServiceTool main window to better fit screens with low resolution (new executable)
